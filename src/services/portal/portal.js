@@ -2,10 +2,14 @@ export default class PortalService {
     constructor($http, $q) {
         this.$http = $http;
         this.$q = $q;
+        
+        this.config = {
+            
+        };
 
         this.messageList = [];
         this.taskList = [];
-        this.alertList = [];
+        this.notificationList = [];
         this.menuList = [];
     }
 
@@ -52,8 +56,8 @@ export default class PortalService {
         return defer.promise;
     }
 
-    getAlertList() {
-        this.alertList = [{
+    getNotificationList() {
+        this.notificationList = [{
             type: "comment",
             content: "asfsdfds fsdfdsfds",
             date: new Date(2015, 7, 1)
@@ -76,7 +80,7 @@ export default class PortalService {
             }];
 
         let defer = this.$q.defer();
-        defer.resolve(this.alertList);
+        defer.resolve(this.notificationList);
         return defer.promise;
     }
 

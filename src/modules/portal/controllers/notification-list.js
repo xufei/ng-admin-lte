@@ -8,7 +8,7 @@ export default class NotificationListController {
 	}
 
 	init() {
-		this.PortalService.getAlertList().then(result => this.notificationList = result);
+		this.PortalService.getNotificationList().then(result => this.notificationList = result);
 	}
 
 	alertClass(type) {

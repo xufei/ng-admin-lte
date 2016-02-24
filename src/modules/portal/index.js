@@ -5,6 +5,8 @@ import TaskDropdownDirective from "./directives/task-dropdown";
 import NotificationDropdownDirective from "./directives/notification-dropdown";
 
 import SideNavDirective from "./directives/side-nav";
+import SideMenuDirective from "./directives/side-menu";
+
 import ControlNavDirective from "./directives/control-nav";
 
 import MessageListDirective from "./directives/message-list";
@@ -14,7 +16,10 @@ export default angular.module("modules.portal", [])
 	.directive("snMessageDropdown", () => new MessageDropdownDirective())
 	.directive("snTaskDropdown", () => new TaskDropdownDirective())
 	.directive("snNotificationDropdown", () => new NotificationDropdownDirective())
+    
 	.directive("snSideNav", () => new SideNavDirective())
+	.directive("snSideMenu", () => new SideMenuDirective())
+    
 	.directive("snControlNav", () => new ControlNavDirective())
 	
 	.directive("snMessageList", () => new MessageListDirective())

@@ -19,17 +19,10 @@
 
     <script src="https://xufei.github.io/ng-control/sn-control.js"></script>
     <link href="https://xufei.github.io/ng-control/sn-control.css" rel="stylesheet">
-
-    <style>
-        main {
-            position: inherit;
-            margin: 50px 0 0 250px;
-            padding: 10px 15px;
-        }
-    </style>
+    
 <link href="app.css" rel="stylesheet"></head>
 
-<body class="hold-transition skin-blue sidebar-mini" ng-app="ng.admin">
+<body class="hold-transition skin-blue sidebar-mini" ng-app="ng.admin" ng-class="{true:'sidebar-collapse'}[config.showSideNav]">
     <div class="wrapper">
         <sn-top-nav></sn-top-nav>
         <sn-side-nav></sn-side-nav>

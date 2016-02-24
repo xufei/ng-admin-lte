@@ -1,6 +1,8 @@
+<!-- sidebar menu: : style can be found in sidebar.less -->
+
 <ul class="sidebar-menu" ng-init="menuCtrl.init()">
     <li class="header">MAIN NAVIGATION</li>
-    
+
     <li ng-repeat="menu1 in menuCtrl.menuTree" class="treeview" ng-class="{true:'active'}[menu1.$expanded]">
         <a href="javascript:void(0)" ng-click="menuCtrl.selectMenu(menu1)">
             <i class="fa" ng-class="menu1.icon"></i>

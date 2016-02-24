@@ -1,4 +1,4 @@
-<header class="main-header">
+<header class="main-header" ng-init="navCtrl.init()">
     <!-- Logo -->
     <a href="index2.html" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -10,7 +10,7 @@
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
-        <a href="javascript:void(0)" class="sidebar-toggle" data-toggle="offcanvas" role="button" >
+        <a href="javascript:void(0)" class="sidebar-toggle" data-toggle="offcanvas" role="button" ng-click="navCtrl.toggleSideNav()">
             <span class="sr-only">Toggle navigation</span>
         </a>
         <!-- Navbar Right Menu -->
@@ -26,7 +26,7 @@
                 <sn-task-dropdown></sn-task-dropdown>
 
                 <!-- User Account: style can be found in dropdown.less -->
-                <li class="dropdown user user-menu">
+                <li class="dropdown user user-menu" sn-dropdown>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                         <span class="hidden-xs">Alexander Pierce</span>
@@ -69,7 +69,9 @@
                 </li>
                 <!-- Control Sidebar Toggle Button -->
                 <li>
-                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                    <a href="javascript:void(0)" data-toggle="control-sidebar" ng-click="navCtrl.toggleControlNav()">
+                        <i class="fa fa-gears"></i>
+                    </a>
                 </li>
             </ul>
         </div>

@@ -1,10 +1,11 @@
 export default class SideMenuController {
-	constructor(PortalService) {
+	constructor(PortalService, $state) {
 		this.menuList = [];
 		this.menuTree = [];
 		this.menuMap = {};
 
 		this.PortalService = PortalService;
+        this.$state = $state;
 	}
 
 	init() {
@@ -58,7 +59,7 @@ export default class SideMenuController {
 		}
 
 		if (menu.state) {
-			$state.go(menu.state);
+			this.$state.go(menu.state);
 		}
 	}
 
@@ -100,4 +101,4 @@ export default class SideMenuController {
 	}
 }
 
-SideMenuController.$inject = ["PortalService"];
+SideMenuController.$inject = ["PortalService", "$state"];

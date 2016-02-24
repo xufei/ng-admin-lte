@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>ng1 portal</title>
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="https://cdn.bootcss.com/angular.js/1.4.5/angular.min.js"></script>
+	<script src="https://cdn.bootcss.com/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+	<script src="https://cdn.bootcss.com/moment.js/2.10.3/moment.min.js"></script>
+
+	<script src="https://xufei.github.io/ng-control/sn-control.js"></script>
+	<link href="https://xufei.github.io/ng-control/sn-control.css" rel="stylesheet">
+	
+	<style>
+		main {
+			position: inherit;
+			margin: 50px 0 0 250px;
+			padding: 10px 15px;
+		}
+	</style>
+<link href="app.css" rel="stylesheet"></head>
+
+<body ng-app="ng.admin">
+	<sn-top-nav></sn-top-nav>
+	
+	<main>
+		<ui-view></ui-view>
+	</main>
+<script src="app.js"></script></body>
+
+</html>

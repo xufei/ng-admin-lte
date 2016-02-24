@@ -1,0 +1,18 @@
+<div class="row" ng-init="dashboardCtrl.init()">
+    <div class="col-lg-3 col-md-6" ng-repeat="item in dashboardCtrl.aggregationItems">
+        <sn-aggregation-item-panel data="item"></sn-aggregation-item-panel>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <sn-area-chart-panel></sn-area-chart-panel>
+        <sn-bar-chart-panel></sn-bar-chart-panel>
+        <sn-timeline-panel></sn-timeline-panel>
+    </div>
+    <div class="col-lg-4">
+        <sn-notification-panel></sn-notification-panel>
+        <sn-donut-panel></sn-donut-panel>
+        <sn-chat-panel></sn-chat-panel>
+    </div>
+</div>

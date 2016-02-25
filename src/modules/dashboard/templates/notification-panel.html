@@ -1,19 +1,23 @@
-<div class="panel panel-default" ng-init="notificationCtrl.init()">
-	<div class="panel-heading">
-		<i class="fa fa-bell fa-fw"></i> Notifications Panel
-	</div>
-	<!-- /.panel-heading -->
-	<div class="panel-body">
-		<div class="list-group">
-			<a href="#" ng-repeat="notification in notificationCtrl.notifications" class="list-group-item">
-				<i class="fa fa-fw" ng-class="'fa-' + notification.type"></i> {{notification.content}}
-				<span class="pull-right text-muted small">
+<div class="box box-default" ng-init="notificationCtrl.init()">
+    <div class="box-header with-border">
+        <h3 class="box-title">
+		<i class="fa fa-bell fa-fw"></i> Notifications box
+        </h3>
+    </div>
+    <!-- /.box-heading -->
+    <div class="box-body">
+        <div class="list-group">
+            <a href="#" ng-repeat="notification in notificationCtrl.notifications" class="list-group-item">
+                <i class="fa fa-fw" ng-class="'fa-' + notification.type"></i> {{notification.content}}
+                <span class="pull-right text-muted small">
 					<em>{{notification.date | fromNow}}</em>
                 </span>
-			</a>
-		</div>
-		<!-- /.list-group -->
-		<a href="#" class="btn btn-default btn-block">View All Alerts</a>
-	</div>
-	<!-- /.panel-body -->
+            </a>
+        </div>
+        <!-- /.list-group -->
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer">
+        <a href="#" class="btn btn-default btn-block">View All Alerts</a>
+    </div>
 </div>

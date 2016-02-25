@@ -3,7 +3,7 @@ import services from "./services/index";
 import filters from "./filters/index";
 
 angular.module("ng.admin", ["ui.router", "sn.components", services, filters, modules])
-	.config(["$stateProvider", "$urlRouterProvider", ($stateProvider, $urlRouterProvider) => {
+	.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider){
 		$urlRouterProvider.otherwise("/dashboard");
 		
 		$stateProvider

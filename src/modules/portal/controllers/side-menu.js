@@ -9,24 +9,22 @@ export default class SideMenuController {
 	}
 
 	init() {
-		this.PortalService.getMenuList().then(menus => {
-			menus.forEach(menuItem => {
-				this.menuMap[menuItem.code] = menuItem;
+		this.PortalService.getMenuList().subscribe(menuItem => {
+            this.menuMap[menuItem.code] = menuItem;
 
-				if (!menuItem.parent) {
-					this.menuTree.push(menuItem);
-				}
-				else {
-					let parent = this.menuMap[menuItem.parent];
-					if (!parent.children) {
-						parent.children = [];
-					}
-					parent.children.push(menuItem);
-					menuItem.parent = parent;
-				}
-			});
-			
-			this.menuList = menus;
+            if (!menuItem.parent) {
+                this.menuTree.push(menuItem);
+            }
+            else {
+                let parent = this.menuMap[menuItem.parent];
+                if (!parent.children) {
+                    parent.children = [];
+                }
+                parent.children.push(menuItem);
+                menuItem.parent = parent;
+            }
+                
+			this.menuList.push(menuItem);
 		});
 	}
 	

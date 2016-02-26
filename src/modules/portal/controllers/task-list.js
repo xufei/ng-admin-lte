@@ -8,7 +8,7 @@ export default class TaskListController {
 	}
 
 	init() {
-		this.PortalService.getTaskList().then(result => this.taskList = result);
+		this.PortalService.getTaskList().subscribe(task => this.taskList.push(task));
 	}
 
 	taskClass(index) {

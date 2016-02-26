@@ -11,7 +11,7 @@ export default class MessageListController {
 	}
 
 	init() {
-		this.PortalService.getMessageList().then(result => this.messageList = result);
+		this.PortalService.getMessageList().subscribe(message => this.messageList.push(message));
 	}
 }
 

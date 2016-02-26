@@ -2,58 +2,51 @@ export default class PortalService {
     constructor($http, $q) {
         this.$http = $http;
         this.$q = $q;
-        
-        this.config = {
-            
-        };
 
-        this.messageList = [];
-        this.taskList = [];
-        this.notificationList = [];
-        this.menuList = [];
+        this.config = {
+
+        };
     }
 
     getMessageList() {
-        this.messageList = [{
+        var messageStream = Rx.Observable.from([{
             title: "Message 1",
             content: "asfsdfds fsdfdsfds",
             date: new Date(2015, 7, 1)
         }, {
-                title: "Message 2",
-                content: "asfsdfds fsdfdsfds",
-                date: new Date(new Date().valueOf() - 3600000)
-            }, {
-                title: "Message 3",
-                content: "asfsdfds fsdfdsfds",
-                date: new Date(new Date().valueOf() - 1500)
-            }];
+            title: "Message 2",
+            content: "asfsdfds fsdfdsfds",
+            date: new Date(new Date().valueOf() - 3600000)
+        }, {
+            title: "Message 3",
+            content: "asfsdfds fsdfdsfds",
+            date: new Date(new Date().valueOf() - 1500)
+        }]);
 
-        let defer = this.$q.defer();
-        defer.resolve(this.messageList);
-        return defer.promise;
+        return messageStream;
     }
 
     getTaskList() {
-        this.taskList = [{
+        var taskList = [{
             name: "Task 1",
             percentage: 40
         }, {
-                name: "Task 2",
-                percentage: 100
-            }, {
-                name: "Task 3",
-                percentage: 60
-            }, {
-                name: "Task 4",
-                percentage: 20
-            }, {
-                name: "Task 5",
-                percentage: 80
-            }];
+            name: "Task 2",
+            percentage: 100
+        }, {
+            name: "Task 3",
+            percentage: 60
+        }, {
+            name: "Task 4",
+            percentage: 20
+        }, {
+            name: "Task 5",
+            percentage: 80
+        }];
 
         let defer = this.$q.defer();
-        defer.resolve(this.taskList);
-        return defer.promise;
+        defer.resolve(taskList);
+        return Rx.Observable.fromPromise(defer.promise);
     }
 
     getNotificationList() {
@@ -81,11 +74,11 @@ export default class PortalService {
 
         let defer = this.$q.defer();
         defer.resolve(this.notificationList);
-        return defer.promise;
+        return Rx.Observable.fromPromise(defer.promise);
     }
 
     getMenuList() {
-        this.menuList = [
+        var menuList = [
             { code: "0", name: "Dashboard", icon: "fa-dashboard", state: "Dashboard" },
             { code: "1", name: "Platform", icon: "fa-bar-chart-o", state: "Platform" },
             { code: "2", name: "Messages", icon: "fa-table", state: "Messages" },
@@ -116,9 +109,7 @@ export default class PortalService {
             { code: "523", parent: "52", name: "Third Level Item" }
         ];
 
-        let defer = this.$q.defer();
-        defer.resolve(this.menuList);
-        return defer.promise;
+        return Rx.Observable.fromArray(menuList);
     }
 }
 
